@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annie's Math Quest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Back-to-hub button — self-contained, replicates the hub's purple pill.
+       Placed after style.css and every key property set explicitly so the
+       game's own CSS cannot bleed in. -->
+  <style>
+    /* Home pill now sits INSIDE the sticky #top-bar as a normal in-flow
+       element (no position:fixed), so it can never cover the title, score,
+       or game content. Sized down to fit the bar but kept a 48px tap target. */
+    .bh-home-btn {
+      flex: 0 0 auto;
+      margin: 0;
+      background: #8b5cf6;
+      color: #fff;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,.6);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-family: "Comic Sans MS", "Chalkboard SE", "Trebuchet MS", system-ui, sans-serif;
+      font-size: clamp(15px, 3.4vw, 18px);
+      font-weight: bold;
+      line-height: 1;
+      box-shadow: 0 4px 0 rgba(0,0,0,.18);
+      min-height: 48px;
+      box-sizing: border-box;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .bh-home-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(0,0,0,.18); }
+    /* Title takes the middle so Home stays pinned left; on a narrow phone the
+       stars wrap to a second line instead of crowding. */
+    #top-bar { flex-wrap: wrap; row-gap: 8px; }
+    #logo { flex: 1 1 auto; }
+  </style>
+</head>
+<body>
+
+  <header id="top-bar">
+    <a href="https://annie.brieflyhome.com" class="bh-home-btn">🏠 Home</a>
+    <div id="logo">💎 Annie's Math Quest</div>
+    <div id="header-right">
+      <div id="stars-row"></div>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- Screens injected by JS -->
+  </main>
+
+  <script src="data/problems.js"></script>
+  <script src="assets/prizes/manifest.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
